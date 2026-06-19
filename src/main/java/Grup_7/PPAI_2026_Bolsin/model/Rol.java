@@ -1,6 +1,9 @@
 package Grup_7.PPAI_2026_Bolsin.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,12 +11,16 @@ import lombok.Setter;
  @Setter
  @Getter
 public class Rol {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-
-    String descripcion;
     String nombre;
 
-    void rol(String descripcion, String nombre)
+    String descripcion;
+    
+
+    public Rol(String descripcion, String nombre)
     {
         this.descripcion=descripcion;
         this.nombre=nombre;
