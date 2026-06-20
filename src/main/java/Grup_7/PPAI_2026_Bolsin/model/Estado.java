@@ -8,30 +8,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
- @Setter
- @Getter
-public class Rol {
-    @Id
+@Getter
+@Setter
+public class Estado {
+
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String nombre;
-
     private String descripcion;
-    
-    public Rol(){}
 
-    public Rol(String descripcion, String nombre)
-    {
-        this.descripcion=descripcion;
+    public Estado(){}
+
+    public Estado(String nombre,String descripcion){
         this.nombre=nombre;
+        this.descripcion=descripcion;
     }
 
-    public void esGCM()
-    {
-        //metodo q busca si es gerente comision medica
-        
-    }
-
-
+    public void sosEnviado(){}
 }
