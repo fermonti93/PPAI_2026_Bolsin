@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,7 +21,11 @@ public class Empleado {
     private String nombre;
     private String apellido;
     private String eMail;
+    
+    @OneToOne
     private Rol rol;
+
+    @OneToOne
     private ComisionMedica asignadoA;
 
     public Empleado (){}

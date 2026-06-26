@@ -2,10 +2,7 @@ package Grup_7.PPAI_2026_Bolsin.model;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,26 +10,35 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CambioEstadoBolsin {
-    
-         @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private LocalDateTime fechaHoraFin;
-    private LocalDateTime fechaHorainicio;
+    private LocalDateTime fechaHoraInicio;
+
+    @ManyToOne
+    @JoinColumn(name = "bolsin_id")
+    private Bolsin bolsin;
+
+    @ManyToOne
     private Estado estado;
 
-    public CambioEstadoBolsin(){}
+    public CambioEstadoBolsin() {}
 
-    public CambioEstadoBolsin(LocalDateTime f,LocalDateTime i)
-    {
-        this.fechaHoraFin=f;
-        this.fechaHorainicio=i;
-        this.estado=null; //este constructor es para poder verificar en la bd
+    public CambioEstadoBolsin(LocalDateTime fechaHoraInicio, Estado estado, Bolsin bolsin) {
+        this.fechaHoraInicio = fechaHoraInicio;
+        this.fechaHoraFin = null;
+        this.estado = estado;
+        this.bolsin = bolsin;
     }
 
-    public void esEstadoActual(){}
+    public boolean esEstadoActual() {
+        return this.fechaHoraFin == null;
+    }
 
-    public void sosEnviado(){}
-
+    public boolean sosEnviado() {
+        return this.estado != null && this.estado.sosEnviado();
+    }
 }
