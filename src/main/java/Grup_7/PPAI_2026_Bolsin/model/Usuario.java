@@ -1,7 +1,7 @@
 package Grup_7.PPAI_2026_Bolsin.model;
 
 import jakarta.persistence.Id;
-
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +16,9 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nombre;
-    private String contraseña; //rebisar el tipo decontraseña
+    private String contraseña; //revisar el tipo decontraseña
+    
+    @OneToOne
     private Empleado empleado;
 
     Usuario(){}
