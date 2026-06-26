@@ -6,7 +6,7 @@ import Grup_7.PPAI_2026_Bolsin.model.Bolsin;
 import Grup_7.PPAI_2026_Bolsin.model.ComisionMedica;
 import Grup_7.PPAI_2026_Bolsin.model.Usuario;
 
-public interface GestorSeguimieto {
+public class GestorSeguimieto {
 
         public Usuario nombreCMUsuarioLogeado;
         public ComisionMedica cMOrigen;
