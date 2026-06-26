@@ -1,14 +1,10 @@
 package Grup_7.PPAI_2026_Bolsin.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,35 +12,60 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Bolsin {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private LocalDate fecha;
     private int numeroBolsin;
-    private int numeroPresinto;
+    private int numeroPrecinto;
     private int peso;
 
-    @OneToMany
-    private CambioEstadoBolsin cambioEstadoBolsin;
+    @OneToMany(mappedBy = "bolsin", cascade = CascadeType.ALL)
+    private List<CambioEstadoBolsin> cambiosEstadoBolsin = new ArrayList<>();
 
-    @OneToOne
+    @ManyToOne
     private ComisionMedica origen;
 
-    @OneToOne
+    @ManyToOne
     private ComisionMedica destino;
 
-    public Bolsin(){}
-    public void esTuOrigenCM(){}
-    public void buscarBolsinEnviado(){}
-    public void obtenerCMDestimado(){}
-    public void buscarDireccionCorreo(){}
-    public void modificarBolsin(){}
-    public void eliminarBolsi(){}
-    public void cerrarBolsin(){}
-    public void registrarRetiroBolsin(){}
-    public void registrarRecepcionBolsin(){}
-    
+    public Bolsin() {}
 
+    public boolean esTuOrigenCM(ComisionMedica cm) {
+        return this.origen != null && this.origen.equals(cm);
+    }
 
+    public boolean sosEnviado() {
+        return cambiosEstadoBolsin.stream()
+                .filter(CambioEstadoBolsin::esEstadoActual)
+                .anyMatch(CambioEstadoBolsin::sosEnviado);
+    }
+
+    public ComisionMedica obtenerCMDestino() {
+        return this.destino;
+    }
+
+    public int getNumeroPrecinto() {
+        return this.numeroPrecinto;
+    }
+
+    public int getNumeroBolsin() {
+        return this.numeroBolsin;
+    }
+
+    public String buscarDireccionCorreo() {
+        return this.destino.getEmail();
+    }
+
+    public void modificarBolsin() {}
+
+    public void eliminarBolsin() {}
+
+    public void cerrarBolsin() {}
+
+    public void registrarRetiroBolsin() {}
+
+    public void registrarRecepcionBolsin() {}
 }

@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class Estado {
 
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
@@ -20,12 +20,14 @@ public class Estado {
     private String nombre;
     private String descripcion;
 
-    public Estado(){}
+    public Estado() {}
 
-    public Estado(String nombre,String descripcion){
-        this.nombre=nombre;
-        this.descripcion=descripcion;
+    public Estado(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
     }
 
-    public void sosEnviado(){}
+    public boolean sosEnviado() {
+        return this.nombre != null && this.nombre.equalsIgnoreCase("Enviado");
+    }
 }
