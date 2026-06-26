@@ -19,15 +19,17 @@ public class Empleado {
 
     private String nombre;
     private String apellido;
-    private int     dni;
-    private String direccion;
     private String eMail;
     private Rol rol;
+    private ComisionMedica asignadoA;
 
     public Empleado (){}
     public Empleado(String nombre,String apellido,int dni,String direccion,String email,Rol rol){}
 
+    public void esTuCM(){}
+    public void sosgetCM(){}
+    public void mostrarCM(){}
     public void obtenerCM(){}
-    public void sosgcm(){}
+    public void sosGCM(){}
 
 }

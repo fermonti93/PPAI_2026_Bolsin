@@ -12,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class CambioEstado {
+public class CambioEstadoBolsin {
     
          @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,9 +22,9 @@ public class CambioEstado {
     private LocalDateTime fechaHorainicio;
     private Estado estado;
 
-    public CambioEstado(){}
+    public CambioEstadoBolsin(){}
 
-    public CambioEstado(LocalDateTime f,LocalDateTime i)
+    public CambioEstadoBolsin(LocalDateTime f,LocalDateTime i)
     {
         this.fechaHoraFin=f;
         this.fechaHorainicio=i;

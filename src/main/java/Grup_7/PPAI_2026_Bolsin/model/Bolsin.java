@@ -21,16 +21,20 @@ public class Bolsin {
     private int numeroBolsin;
     private int numeroPresinto;
     private int peso;
-    private CambioEstado cambioEstado;
-    //falta comicion medica
+    private CambioEstadoBolsin cambioEstadoBolsin;
+    private ComisionMedica origen;
+    private ComisionMedica destino;
 
     public Bolsin(){}
     public void esTuOrigenCM(){}
     public void buscarBolsinEnviado(){}
     public void obtenerCMDestimado(){}
-    public void ubicacion(){}//reviar este metodo en el diagrama
-    public void getDatos(){} //revisar quien conose q 
-
+    public void buscarDireccionCorreo(){}
+    public void modificarBolsin(){}
+    public void eliminarBolsi(){}
+    public void cerrarBolsin(){}
+    public void registrarRetiroBolsin(){}
+    public void registrarRecepcionBolsin(){}
     
 
 

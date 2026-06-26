@@ -1,31 +1,30 @@
 package Grup_7.PPAI_2026_Bolsin.model;
 
+import org.springframework.data.annotation.Id;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Estado {
-
+public class ComisionMedica {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String ambito;
+    private int codigo;
+    private String direccion;
+    private String eMail;
     private String nombre;
-    private String descripcion;
+    private String telefono;
+    
+  
+    public ComisionMedica(){}
+    public void buscarGerente(){}
 
-    public Estado(){}
 
-    public Estado(String nombre,String descripcion){
-        this.nombre=nombre;
-        this.descripcion=descripcion;
-    }
-
-    public void sosEnviado(){}
 }

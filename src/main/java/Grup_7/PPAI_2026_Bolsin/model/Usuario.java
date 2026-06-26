@@ -1,37 +1,28 @@
 package Grup_7.PPAI_2026_Bolsin.model;
 
+import org.springframework.data.annotation.Id;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
- @Setter
- @Getter
-public class Rol {
+@Getter
+@Setter
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String nombre;
+    private String contraseña; //rebisar el tipo decontraseña
+    private Empleado empleado;
 
-    private String descripcion;
-    
-    public Rol(){}
-
-    public Rol(String descripcion, String nombre)
-    {
-        this.descripcion=descripcion;
+    Usuario(){}
+    Usuario(String nombre,String contraseña){
         this.nombre=nombre;
+        this.contraseña=contraseña;
     }
-
-    public void esGCM()
-    {
-        //metodo q busca si es gerente comision medica
-        
-    }
-    public void delete(){}
-
+    public void obtenerEmpleado(Empleado empleado){}
 }

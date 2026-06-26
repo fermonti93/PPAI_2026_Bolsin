@@ -11,7 +11,6 @@ public class Ppai2026BolsinApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Ppai2026BolsinApplication.class, args);
 		Rol rol = new Rol("prueba 1","admin");
-
 		System.out.println(rol.getNombre());
 	}
 
