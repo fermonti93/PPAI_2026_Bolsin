@@ -2,7 +2,7 @@ package Grup_7.PPAI_2026_Bolsin.model;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
