@@ -19,10 +19,11 @@ public class Usuario {
     private String contraseña; //rebisar el tipo decontraseña
     private Empleado empleado;
 
-    Usuario(){}
-    Usuario(String nombre,String contraseña){
+    public Usuario(){}
+    public Usuario(String nombre,String contraseña, Empleado empleado){
         this.nombre=nombre;
         this.contraseña=contraseña;
+        this.empleado=empleado;
     }
     public void obtenerEmpleado(Empleado empleado){}
 }

@@ -24,7 +24,14 @@ public class Empleado {
     private ComisionMedica asignadoA;
 
     public Empleado (){}
-    public Empleado(String nombre,String apellido,int dni,String direccion,String email,Rol rol){}
+    public Empleado(String nombre,String apellido,String eMail,Rol rol, ComisionMedica asignadoA){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.eMail = eMail;
+        this.rol = rol;
+        this.asignadoA = asignadoA;
+
+    }
 
     public void esTuCM(){}
     public void sosgetCM(){}

@@ -23,7 +23,13 @@ public class ComisionMedica {
     private String telefono;
     
   
-    public ComisionMedica(){}
+    public ComisionMedica(int codigo, String direccion, String eMail, String nombre, String telefono){
+        this.codigo = codigo;
+        this.direccion = direccion;
+        this.eMail = eMail;
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
     public void buscarGerente(){}
 
 

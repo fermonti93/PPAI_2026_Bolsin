@@ -22,7 +22,8 @@ public class Estado {
 
     public Estado(){}
 
-    public Estado(String nombre,String descripcion){
+    public Estado(String ambito,String nombre,String descripcion){
+        this.ambito=ambito;
         this.nombre=nombre;
         this.descripcion=descripcion;
     }

@@ -26,7 +26,17 @@ public class Bolsin {
     private ComisionMedica origen;
     private ComisionMedica destino;
 
-    public Bolsin(){}
+    public Bolsin(LocalDate fecha, int numeroBolsin, int numeroPresinto, int peso, CambioEstadoBolsin cambioEstadoBolsin,
+        ComisionMedica origen, ComisionMedica destino){
+
+            this.fecha = fecha;
+            this.numeroBolsin = numeroBolsin;
+            this.numeroPresinto = numeroPresinto;
+            this.peso = peso;
+            this.cambioEstadoBolsin = cambioEstadoBolsin;
+            this.origen = origen;
+            this.destino = destino;
+    }
     public void esTuOrigenCM(){}
     public void buscarBolsinEnviado(){}
     public void obtenerCMDestimado(){}

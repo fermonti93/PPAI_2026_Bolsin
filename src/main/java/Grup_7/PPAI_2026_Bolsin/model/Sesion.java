@@ -1,5 +1,6 @@
 package Grup_7.PPAI_2026_Bolsin.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class Secion {
+public class Sesion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,7 +22,11 @@ public class Secion {
     private LocalDateTime fechahoraFin;
     private Usuario usuario;
 
-    Secion(){}
+    public Sesion(LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin, Usuario usuario){
+        this.fechaHoraInicio = fechaHoraInicio;
+        this.fechahoraFin = fechaHoraFin;
+        this.usuario = usuario;
+    }
     public void buscarUsuarioLogeado(){}
 
 }
