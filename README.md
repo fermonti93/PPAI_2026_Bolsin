@@ -1,12 +1,12 @@
 # PPAI_2026_Bolsin
 
-Este proyecto es el backend de una aplicación académica para gestión de proyectos red sismica de la catedra de diseño de softwar 2025
+Este proyecto es el backend de una aplicación académica para gestión de proyectos red sismica de la catedra de diseño de software 2025
 1. Tecnologías usadas
 
 Este proyecto contara con el uso de lombock springboot posgressql y el lenguaje de programacion java y postman
 2. Arquitectura
 
-se utilisara una ARQUITECTURA MULTICAPA
+se utilizara una ARQUITECTURA MULTICAPA
 
 DTO (Data Transfer Object): Se utilizan para desacoplar la representación de datos (la vista) de los objetos del modelo.
 
@@ -19,4 +19,4 @@ Repository: Es la capa de persistencia de datos. Facilitan el trabajo con difere
 Entity (o Model): Una entidad representa una tabla almacenada en una base de datos. Cada instancia de una entidad representa una fila en la tabla. Cada clase de entidad debe estar marcada con la anotación @Entity
 3. Arquitectura
 
-se utilisara la rama main como produccion y se aran las pruebas y verciones inestables a aprtir de la rama prototipo
+se utilizara la rama main como produccion y se haran las pruebas y versiones inestables a partir de la rama prototipo
